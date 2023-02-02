@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  p= todo.text
+    .todo-actions 
+      a(href='/todos') Show all Todos
+      | 
+      a(href=`/todos/${todo.id}/delete`) Delete Todo
+      | 
+      a(href=`/todos/${todo.id}/edit`) Edit Todo
