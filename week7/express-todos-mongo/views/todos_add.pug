@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= title
+  p Use the form below to add a todo.
+  hr
+  if msg 
+    ul
+      each val in msg 
+        li(class='redtext')= val.msg
+  form(method='POST' action='/todos/add')
+    label Todo Text: 
+      | 
+      input(type='text' name='todoText') 
+    br
+    label Email Address: 
+      | 
+      input(type='text' name='todoEmail')
+    br
+    button(type='submit') Create Todo 
+    | 
+    a(href='/todos') Cancel
